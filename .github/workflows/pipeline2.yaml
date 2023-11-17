@@ -10,16 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Setup GraalVM
         uses: graalvm/setup-graalvm@v1
         with:
           java-version: '17'
           distribution: 'graalvm'
-      - name: Upload binary
-        uses: actions/upload-artifact@v2
-        with:
-          name: quarkusArtefact
-          path: ./target
       - name: where are we?
         run: pwd
       - name: what do we have?
@@ -32,3 +29,8 @@ jobs:
         working-directory: ..
       - name: Compile and/or test our code
         run: mvn test
+      - name: Upload binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: quarkusArtefact
+          path: ./target
