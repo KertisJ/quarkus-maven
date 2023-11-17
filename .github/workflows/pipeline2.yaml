@@ -22,5 +22,6 @@ jobs:
           path: ./target
       - name: Compile and/or test our code
         run: mvn compile
+        working-directory: .
       - name: Compile and/or test our code
         run: mvn test
