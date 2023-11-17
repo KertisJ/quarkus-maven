@@ -20,8 +20,9 @@ jobs:
         with:
           name: quarkusArtefact
           path: ./target
+      - name: where are we?
+        run: pwd
       - name: Compile and/or test our code
         run: mvn compile
-        working-directory: .
       - name: Compile and/or test our code
         run: mvn test
