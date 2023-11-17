@@ -20,13 +20,13 @@ jobs:
       - name: Compile code
         run: mvn compile
       - name: Run tests
-        run: mvn test
+        run: 'mvn test'
       - name: Create native profile
-        run: mvn clean install -Pnative
+        run: 'mvn clean install -Pnative'
       - name: Compile and/or test our code
-        run: mvn test
+        run: 'mvn test'
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
           name: quarkusArtefact
-          path: .
+          path: target/ci_cd_codelab-1.0-SNAPSHOT-runner.exe
