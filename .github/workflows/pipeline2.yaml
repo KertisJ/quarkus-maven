@@ -22,5 +22,7 @@ jobs:
           path: C:\_development\switchfully\quarkus-maven\target
       - name: Compile and/or test our code
         run: mvn compile
+        working-directory: ./quarkus-maven
       - name: Compile and/or test our code
         run: mvn test
+        working-directory: ./quarkus-maven
