@@ -19,12 +19,16 @@ jobs:
           distribution: 'graalvm'
       - name: Compile code
         run: mvn compile
+
       - name: Run tests
         run: 'mvn test'
+
       - name: Create native profile
         run: 'mvn clean install -Pnative'
+
       - name: Compile and/or test our code
         run: 'mvn test'
+
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
