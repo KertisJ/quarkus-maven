@@ -17,16 +17,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'graalvm'
-      - name: where are we?
-        run: pwd
-      - name: what do we have?
-        run: ls
-      - name: what do we have?
-        run: ls
-        working-directory: ..
       - name: Compile and/or test our code
         run: mvn compile
-        working-directory: ..
       - name: Compile and/or test our code
         run: mvn test
       - name: Upload binary
