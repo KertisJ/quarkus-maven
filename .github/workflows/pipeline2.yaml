@@ -15,12 +15,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'graalvm'
+      - name: Compile and/or test our code
+        run: mvn compile
+      - name: Compile and/or test our code
+        run: mvn test
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
           name: quarkusArtefact
           path: C:\_development\switchfully\quarkus-maven\target
-      - name: Compile and/or test our code
-        run: mvn compile
-      - name: Compile and/or test our code
-        run: mvn test
